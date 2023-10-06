@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-axios.defaults.baseURL =
-    process.env.NODE_ENV === 'development' ?
-        'http://localhost:8080' : 'http://10.128.0.5:8080';
+// axios.defaults.baseURL =
+//     process.env.NODE_ENV === 'development' ?
+//         'http://localhost:8080' : 'http://10.128.0.5:8080';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
     description:""
   });
   useEffect(() => {
-    axios.get('http://localhost:8080/api')
+    axios.get('http://35.239.113.84:8080/api')
         .then((response) => {
           setUser(response.data);
           console.log(user)
@@ -23,7 +23,7 @@ function App() {
   const onClick = () => {
     setLoad(true);
 
-    axios.post('http://localhost:8080/api', form)
+    axios.post('http://35.239.113.84:8080/api', form)
         .then((response) => {
           setObserver(!observer);
           setLoad(false);
